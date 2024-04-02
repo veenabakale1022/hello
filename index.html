@@ -1,1 +1,55 @@
 
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <h1>HELLO!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+
+                <h3>What is the national game of India?</h3>
+                <p id="status"></p>
+
+                <button id="incorrect">Sumo wrestling</button>
+                <button id="incorrect">Baseball </button>
+                <button id="incorrect">LODO</button>
+                <button id="incorrect">Ping Pong</button>
+                <button id="correct">Hockey</button>
+
+                <script>
+                    let correct = document.querySelector('#correct');  //querySelector is used to select a single element from the DOM tree, while document.
+                    let incorrect = document.querySelectorAll('#incorrect'); // querySelectorAll is used to select multiple elements from the DOM tree.
+                    let status = document.querySelector('#status');
+
+                    correct.onclick = function() {
+                        correct.style.backgroundColor = 'green';
+                        status.innerHTML = "Correct!";
+                        //innerHTML when you're setting text inside of an HTML tag like an anchor tag, paragraph tag, span, div, or textarea.
+                    };
+
+                    for (let i = 0; i < incorrect.length; i++) {
+                        incorrect[i].onclick = function() {
+                            incorrect[i].style.backgroundColor = 'red';
+                            status.innerHTML = "Incorrect!";
+                        };
+                    }
+                </script>
+            </div>
+
+            
+        </div>
+    </body>
+</html>
